@@ -353,9 +353,18 @@
                 </select>
               </div>
               <div class="field">
-                <label for="shoeSize">신발 사이즈(mm) <span>*</span></label>
-                <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="예: 270" required />
+                <label for="tshirtSize">티셔츠 사이즈 <span>*</span></label>
+                <select id="tshirtSize" name="tshirtSize" required>
+                  <option value="">선택</option>
+                  <option value="90">90</option>
+                  <option value="100">100</option>
+                  <option value="110">110</option>
+                </select>
               </div>
+            </div>
+            <div class="field">
+              <label for="shoeSize">신발 사이즈(mm) <span>*</span></label>
+              <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="예: 270" required />
             </div>
             <div class="field">
               <label for="reason">참가 이유 <span>*</span></label>
