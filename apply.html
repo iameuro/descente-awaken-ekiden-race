@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>참가신청 | 2026 Awaken Ekiden Race | DESCENTE RUNNING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit">DESCENTE RUNNING</a></div>
+      <nav class="main-nav">
+        <a href="index.html">홈</a>
+        <a href="guide.html">어웨이큰 에키덴 레이스</a>
+        <a href="crews.html">데상트 러닝 커뮤니티</a>
+      </nav>
+      <a class="btn btn-dark" href="apply.html">참가 신청</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>참가신청</h1>
+        <p>2026 Awaken Ekiden Race에 참가 신청하세요</p>
+      </div>
+    </section>
+
+    <section id="apply" class="section alt apply-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">APPLY</div>
+          <h2>참가 신청 / 확인</h2>
+          <p>참가 신청은 개별 신청 방식으로 진행됩니다. 팀명을 수기로 기재하여 신청하세요. 아래 2단계 폼을 입력하면 신청이 완료됩니다.</p>
+        </div>
+
+        <div class="apply-top-buttons">
+          <a href="#apply-form" class="btn btn-dark">참가 신청</a>
+          <a href="#apply" class="btn btn-line">신청 확인</a>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-steps">
+            <span class="progress-step active" data-step="1">1. 기본 정보</span>
+            <span class="progress-step" data-step="2">2. 사이즈/사유</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <form id="applyForm" class="apply-form">
+          <div class="form-step active" data-step="1">
+            <div class="field">
+              <label for="teamName">팀명 <span>*</span></label>
+              <input id="teamName" name="teamName" type="text" placeholder="팀명을 입력하세요" required />
+            </div>
+            <div class="field">
+              <label for="category">참가 부문 <span>*</span></label>
+              <select id="category" name="category" required>
+                <option value="">부문을 선택하세요</option>
+                <option value="male2">남자 2인 릴레이</option>
+                <option value="female2">여자 2인 릴레이</option>
+                <option value="mixed4">혼성 4인 릴레이</option>
+              </select>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="leaderName">이름 <span>*</span></label>
+                <input id="leaderName" name="leaderName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="personalPhone">개인 연락처 <span>*</span></label>
+                <input id="personalPhone" name="personalPhone" type="tel" placeholder="010-0000-0000" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">팀 대표자 연락처 뒷 4자리 <span>*</span></label>
+              <input id="phone" name="phone" type="text" pattern="[0-9]{4}" maxlength="4" placeholder="0000" required />
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <div class="field-grid">
+              <div class="field">
+                <label for="topSize">상의 사이즈 <span>*</span></label>
+                <select id="topSize" name="topSize" required>
+                  <option value="">선택</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="tshirtSize">티셔츠 사이즈 <span>*</span></label>
+                <select id="tshirtSize" name="tshirtSize" required>
+                  <option value="">선택</option>
+                  <option value="90">90</option>
+                  <option value="100">100</option>
+                  <option value="110">110</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="shoeSize">신발 사이즈(mm) <span>*</span></label>
+              <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="예: 270" required />
+            </div>
+            <div class="field">
+              <label for="reason">참가 이유 <span>*</span></label>
+              <textarea id="reason" name="reason" rows="5" maxlength="300" placeholder="왜 이 대회에 참여하고 싶은지 알려주세요." required></textarea>
+            </div>
+            <div class="checks">
+              <label><input type="checkbox" id="privacy" required /> 개인정보 수집 및 이용에 동의합니다.</label>
+              <label><input type="checkbox" id="contentUse" required /> 촬영 및 콘텐츠 활용에 동의합니다.</label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-line" id="prevBtn" disabled>이전</button>
+            <button type="button" class="btn btn-dark" id="nextBtn">다음</button>
+            <button type="submit" class="btn btn-dark hidden" id="submitBtn">최종 제출</button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+          <h3>신청이 완료되었습니다</h3>
+          <p>선정 결과는 5월 22일(금)에 발표됩니다. 팀과 함께 달릴 준비를 시작하세요.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>DESCENTE RUNNING © 2026 Awaken Ekiden Race Event</p>
+      <p>문의 : event@descente.co.kr</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

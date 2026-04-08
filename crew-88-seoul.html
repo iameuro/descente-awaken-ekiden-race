@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>88서울 | 데상트 러닝 커뮤니티 | 2026 Awaken Ekiden Race</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit">DESCENTE RUNNING</a></div>
+      <nav class="main-nav">
+        <a href="index.html">홈</a>
+        <a href="guide.html">어웨이큰 에키덴 레이스</a>
+        <a href="crews.html">데상트 러닝 커뮤니티</a>
+      </nav>
+      <a class="btn btn-dark" href="apply.html">참가 신청</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>88서울</h1>
+        <p>서울 기반 러닝 크루</p>
+      </div>
+    </section>
+
+    <section class="section crew-info-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">CREW INTRODUCTION</div>
+          <h2>크루 소개</h2>
+        </div>
+        <div class="crew-info-content">
+          <p>88서울은 서울을 기반으로 활동하는 가장 활동적인 러닝 크루입니다. 도시의 다양한 코스를 누비며 즐겁게 달리는 문화를 추구하며, 모든 수준의 러너들이 환영받는 커뮤니티입니다.</p>
+          <h3>주요 활동</h3>
+          <ul>
+            <li>다양한 코스 탐방</li>
+            <li>도시 러닝 투어</li>
+            <li>정기 정모 및 단합</li>
+            <li>접근성 높은 프로그램</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt program-info-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">PROGRAM GUIDE</div>
+          <h2>프로그램 안내</h2>
+        </div>
+        <div class="program-info-content">
+          <div class="program-info-card">
+            <h3>운영 시간</h3>
+            <p>평일: 19:00 ~ 20:30<br>주말: 07:00 ~ 09:00</p>
+          </div>
+          <div class="program-info-card">
+            <h3>참가 인원</h3>
+            <p>매주 30~40명</p>
+          </div>
+          <div class="program-info-card">
+            <h3>난이도</h3>
+            <p>초급 ~ 중급</p>
+          </div>
+          <div class="program-info-card">
+            <h3>특징</h3>
+            <p>접근성 높음,<br>다양한 코스</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section program-signup-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">APPLY</div>
+          <h2>프로그램 신청</h2>
+        </div>
+        
+        <form id="crewProgramForm" class="apply-form">
+          <div class="field">
+            <label for="name">이름 <span>*</span></label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="phone">연락처 <span>*</span></label>
+            <input id="phone" name="phone" type="tel" placeholder="010-0000-0000" required />
+          </div>
+          <div class="field">
+            <label for="shoeSize">신발 사이즈(mm) <span>*</span></label>
+            <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="예: 270" required />
+          </div>
+          <div class="field">
+            <label for="instagram">인스타그램 계정 <span>*</span></label>
+            <input id="instagram" name="instagram" type="text" placeholder="@account" required />
+          </div>
+          <div class="form-actions">
+            <a href="crews.html" class="btn btn-line">돌아가기</a>
+            <button type="submit" class="btn btn-dark">신청하기</button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+          <h3>신청이 완료되었습니다</h3>
+          <p>88서울 프로그램 신청이 접수되었습니다. 감사합니다!</p>
+          <p><a href="crews.html" class="btn btn-dark" style="margin-top:20px;display:inline-block">돌아가기</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>DESCENTE RUNNING © 2026 Awaken Ekiden Race Event</p>
+      <p>문의 : event@descente.co.kr</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById('crewProgramForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+      window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

@@ -8,13 +8,21 @@ const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submitBtn');
 const successMessage = document.getElementById('successMessage');
 const programCards = document.querySelectorAll('.program-card');
-const programFeedback = document.getElementById('program-feedback');
 const programForm = document.getElementById('programForm');
+const crewDetail = document.getElementById('crewDetail');
+const crewName = document.getElementById('crewName');
+const crewDesc = document.getElementById('crewDesc');
+const cancelBtn = document.getElementById('cancelBtn');
+const programSuccessMessage = document.getElementById('programSuccessMessage');
 const raceCategoryCards = document.querySelectorAll('.race-category-card');
 
 let currentStep = 1;
+const validCategories = new Set(['male2', 'female2', 'mixed4']);
 
 function updateProgress() {
+  if (!progressFill || !prevBtn || !nextBtn || !submitBtn || !steps.length || !progressSteps.length) {
+    return;
+  }
   progressSteps.forEach((step, index) => {
     step.classList.toggle('active', index + 1 <= currentStep);
   });
@@ -27,6 +35,7 @@ function updateProgress() {
 
 function validateCurrentStep() {
   const activeStep = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+  if (!activeStep) return true;
   const fields = activeStep.querySelectorAll('input, select, textarea');
   for (const field of fields) {
     if (!field.checkValidity()) {
@@ -37,41 +46,66 @@ function validateCurrentStep() {
   return true;
 }
 
-prevBtn.addEventListener('click', () => {
-  if (currentStep > 1) {
-    currentStep -= 1;
-    updateProgress();
+if (nextBtn) {
+  nextBtn.addEventListener('click', () => {
+    if (validateCurrentStep() && currentStep < 2) {
+      currentStep += 1;
+      updateProgress();
+    }
+  });
+}
+
+if (prevBtn) {
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 1) {
+      currentStep -= 1;
+      updateProgress();
+    }
+  });
+}
+
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validateCurrentStep()) return;
+    form.classList.add('hidden');
+    successMessage.classList.remove('hidden');
+    window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const selectedCategory = params.get('category');
+  if (categorySelect && validCategories.has(selectedCategory)) {
+    categorySelect.value = selectedCategory;
   }
-});
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (!validateCurrentStep()) return;
-  form.classList.add('hidden');
-  successMessage.classList.remove('hidden');
-  window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
-});
+  updateProgress();
+}
 
-programCards.forEach(card => {
-  card.addEventListener('click', () => {
-    programFeedback.textContent = `${card.dataset.program} 신청 폼입니다.`;
-    programForm.classList.remove('hidden');
-    programForm.scrollIntoView({ behavior: 'smooth' });
+if (programCards.length && programForm && crewDetail && crewName && crewDesc && cancelBtn && programSuccessMessage) {
+  programCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const crew = card.dataset.crew;
+      const desc = card.dataset.desc;
+      crewName.textContent = crew;
+      crewDesc.textContent = desc;
+      crewDetail.classList.remove('hidden');
+      programSuccessMessage.classList.add('hidden');
+      programForm.classList.remove('hidden');
+      programForm.reset();
+      crewDetail.scrollIntoView({ behavior: 'smooth' });
+    });
   });
-});
 
-programForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  programForm.classList.add('hidden');
-  programFeedback.textContent = '신청이 완료되었습니다.';
-});
-
-raceCategoryCards.forEach(card => {
-  card.addEventListener('click', () => {
-    const category = card.dataset.category;
-    categorySelect.value = category;
-    document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+  cancelBtn.addEventListener('click', () => {
+    crewDetail.classList.add('hidden');
+    programForm.reset();
   });
-});
 
-updateProgress();
+  programForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    programForm.classList.add('hidden');
+    programSuccessMessage.classList.remove('hidden');
+    window.scrollTo({ top: programSuccessMessage.offsetTop - 100, behavior: 'smooth' });
+  });
+}
