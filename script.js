@@ -15,9 +15,38 @@ const crewDesc = document.getElementById('crewDesc');
 const cancelBtn = document.getElementById('cancelBtn');
 const programSuccessMessage = document.getElementById('programSuccessMessage');
 const raceCategoryCards = document.querySelectorAll('.race-category-card');
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileMenu = document.getElementById('mobileMenu');
 
 let currentStep = 1;
 const validCategories = new Set(['male2', 'female2', 'mixed4']);
+
+function closeMobileMenu() {
+  if (!menuToggle || !mobileMenu) return;
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.classList.remove('is-open');
+  mobileMenu.classList.remove('open');
+  document.body.classList.remove('menu-open');
+}
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.classList.toggle('is-open', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+  });
+
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 640) {
+      closeMobileMenu();
+    }
+  });
+}
 
 function updateProgress() {
   if (!progressFill || !prevBtn || !nextBtn || !submitBtn || !steps.length || !progressSteps.length) {

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home-page">
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">DESCENTE RUNNING</div>
@@ -18,7 +18,19 @@
         <a href="guide.html">어웨이큰 에키덴 레이스</a>
         <a href="crews.html">데상트 러닝 커뮤니티</a>
       </nav>
-      <a class="btn btn-dark" href="apply.html">참가 신청</a>
+      <a class="btn btn-dark header-cta" href="apply.html">참가 신청</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <strong>메뉴</strong>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">홈</a>
+        <a href="guide.html">어웨이큰 에키덴 레이스</a>
+        <a href="crews.html">데상트 러닝 커뮤니티</a>
+        <a href="apply.html">참가 신청</a>
+      </div>
     </div>
   </header>
 
@@ -47,6 +59,17 @@
             <div class="poster-tag">100 TEAMS · FREE ENTRY</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="race-marquee" aria-label="Event banner">
+      <div class="race-marquee-track">
+        <span>AWAKEN EKIDEN RACE</span>
+        <span>DESCENTE RUNNING</span>
+        <span>TEAM RELAY FESTIVAL</span>
+        <span>AWAKEN EKIDEN RACE</span>
+        <span>DESCENTE RUNNING</span>
+        <span>TEAM RELAY FESTIVAL</span>
       </div>
     </section>
 
