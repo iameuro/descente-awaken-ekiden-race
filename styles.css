@@ -35,10 +35,23 @@ button,input,textarea,select{font:inherit}
   border-bottom:1px solid rgba(0,0,0,.06)
 }
 .header-inner{
-  min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:relative
 }
 .logo{font-weight:900;letter-spacing:.06em;font-size:15px}
-.main-nav{display:flex;gap:24px}
+.main-nav{
+  display:flex;
+  gap:24px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  justify-content:center;
+  white-space:nowrap
+}
 .main-nav a{font-size:14px;color:#333;letter-spacing:.08em}
 .lang-switch{
   display:inline-flex;
@@ -514,7 +527,12 @@ button,input,textarea,select{font:inherit}
     border-bottom-color:rgba(255,255,255,.08)
   }
   .home-page .logo{color:#fff}
-  .main-nav,.lang-switch{display:none}
+  .main-nav{
+    display:none;
+    position:static;
+    transform:none
+  }
+  .lang-switch{display:none}
   .menu-toggle{
     display:inline-flex;
     margin-left:auto

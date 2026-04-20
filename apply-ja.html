@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>参加申込 | 2026 Awaken Ekiden Race | DESCENTE RUNNING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="ko" href="apply.html" />
+  <link rel="alternate" hreflang="ja" href="apply-ja.html" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="lang-ja">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index-ja.html" style="text-decoration:none;color:inherit">DESCENTE RUNNING</a></div>
+      <nav class="main-nav">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+      </nav>
+      <div class="lang-switch" aria-label="言語選択">
+        <a href="apply.html">KR</a>
+        <a class="active" href="apply-ja.html" aria-current="page">JP</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <strong>メニュー</strong>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+        <a href="apply-ja.html">参加申込</a>
+        <div class="mobile-lang-switch" aria-label="言語選択">
+          <a href="apply.html">KR</a>
+          <a class="active" href="apply-ja.html" aria-current="page">JP</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>参加申込</h1>
+        <p>2026 Awaken Ekiden Raceにお申し込みください</p>
+      </div>
+    </section>
+
+    <section id="apply" class="section alt apply-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">APPLY</div>
+          <h2>参加申込 / 確認</h2>
+          <p>参加申込は個別申込方式で進行します。チーム名を入力してお申し込みください。下記の2段階フォームを入力すると申込が完了します。</p>
+        </div>
+
+        <div class="apply-top-buttons">
+          <a href="#apply-form" class="btn btn-dark">参加申込</a>
+          <a href="#apply" class="btn btn-line">申込確認</a>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-steps">
+            <span class="progress-step active" data-step="1">1. 基本情報</span>
+            <span class="progress-step" data-step="2">2. サイズ/理由</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <form id="applyForm" class="apply-form">
+          <div class="form-step active" data-step="1">
+            <div class="field">
+              <label for="teamName">チーム名 <span>*</span></label>
+              <input id="teamName" name="teamName" type="text" placeholder="チーム名を入力してください" required />
+            </div>
+            <div class="field">
+              <label for="category">参加部門 <span>*</span></label>
+              <select id="category" name="category" required>
+                <option value="">部門を選択してください</option>
+                <option value="male2">男子2名リレー</option>
+                <option value="female2">女子2名リレー</option>
+                <option value="mixed4">混合4名リレー（6月29日 月）</option>
+              </select>
+            </div>
+            <div class="field-grid">
+              <div class="field">
+                <label for="leaderName">名前 <span>*</span></label>
+                <input id="leaderName" name="leaderName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="personalPhone">個人連絡先 <span>*</span></label>
+                <input id="personalPhone" name="personalPhone" type="tel" placeholder="010-0000-0000" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">チーム代表者の連絡先 下4桁 <span>*</span></label>
+              <input id="phone" name="phone" type="text" pattern="[0-9]{4}" maxlength="4" placeholder="0000" required />
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <div class="field-grid">
+              <div class="field">
+                <label for="topSize">トップスサイズ <span>*</span></label>
+                <select id="topSize" name="topSize" required>
+                  <option value="">選択</option>
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="tshirtSize">Tシャツサイズ <span>*</span></label>
+                <select id="tshirtSize" name="tshirtSize" required>
+                  <option value="">選択</option>
+                  <option value="90">90</option>
+                  <option value="100">100</option>
+                  <option value="110">110</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="shoeSize">シューズサイズ(mm) <span>*</span></label>
+              <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="例: 270" required />
+            </div>
+            <div class="field">
+              <label for="reason">参加理由 <span>*</span></label>
+              <textarea id="reason" name="reason" rows="5" maxlength="300" placeholder="この大会に参加したい理由を教えてください。" required></textarea>
+            </div>
+            <div class="checks">
+              <label><input type="checkbox" id="privacy" required /> 個人情報の収集および利用に同意します。</label>
+              <label><input type="checkbox" id="contentUse" required /> 撮影およびコンテンツ活用に同意します。</label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-line" id="prevBtn" disabled>戻る</button>
+            <button type="button" class="btn btn-dark" id="nextBtn">次へ</button>
+            <button type="submit" class="btn btn-dark hidden" id="submitBtn">最終提出</button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+          <h3>申込が完了しました</h3>
+          <p>選定結果は5月22日(金)に発表されます。チームとともに走る準備を始めましょう。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>DESCENTE RUNNING © 2026 Awaken Ekiden Race Event</p>
+      <p>お問い合わせ : event@descente.co.kr</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

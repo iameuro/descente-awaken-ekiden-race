@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>デサント ランニング コミュニティ | 2026 Awaken Ekiden Race | DESCENTE RUNNING</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="ko" href="crews.html" />
+  <link rel="alternate" hreflang="ja" href="crews-ja.html" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="lang-ja">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index-ja.html" style="text-decoration:none;color:inherit">DESCENTE RUNNING</a></div>
+      <nav class="main-nav">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+      </nav>
+      <div class="lang-switch" aria-label="言語選択">
+        <a href="crews.html">KR</a>
+        <a class="active" href="crews-ja.html" aria-current="page">JP</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <strong>メニュー</strong>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+        <a href="apply-ja.html">参加申込</a>
+        <div class="mobile-lang-switch" aria-label="言語選択">
+          <a href="crews.html">KR</a>
+          <a class="active" href="crews-ja.html" aria-current="page">JP</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>デサント ランニング コミュニティ</h1>
+        <p>4月末から週1回開催されるデサント ランニングプログラムにご参加ください</p>
+      </div>
+    </section>
+
+    <section id="programs" class="section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">RUNNING COMMUNITY</div>
+          <h2>デサント ランニングプログラム</h2>
+          <p>各クルーのプログラムを選択して、詳細確認と申込ができます。</p>
+        </div>
+        <div class="program-grid">
+          <a href="crew-seoul-venus-ja.html" class="program-card">ソウルヴィーナス<br>プログラム</a>
+          <a href="crew-commune-seoul-ja.html" class="program-card">コミューン・ド・ソウル<br>プログラム</a>
+          <a href="crew-88-seoul-ja.html" class="program-card">88ソウル<br>プログラム</a>
+          <a href="crew-no-rules-running-ja.html" class="program-card">ノールールズランニング<br>プログラム</a>
+          <a href="crew-rush-ja.html" class="program-card">ラッシュ<br>プログラム</a>
+          <a href="crew-nakwon-ja.html" class="program-card">ナグォン<br>プログラム</a>
+          <a href="crew-honesty-ja.html" class="program-card">ジョンジク<br>プログラム</a>
+          <a href="crew-woosan30-ja.html" class="program-card">ワウサン 30<br>プログラム</a>
+        </div>
+
+        <div id="crewDetail" class="crew-detail hidden">
+          <div class="section-title-block">
+            <h3 id="crewName"></h3>
+            <p id="crewDesc"></p>
+          </div>
+
+          <form id="programForm" class="apply-form">
+            <div class="form-section">
+              <h4>プログラム申込</h4>
+              <div class="field">
+                <label for="programName">名前 <span>*</span></label>
+                <input id="programName" name="programName" type="text" required />
+              </div>
+              <div class="field">
+                <label for="programPhone">連絡先 <span>*</span></label>
+                <input id="programPhone" name="programPhone" type="tel" placeholder="010-0000-0000" required />
+              </div>
+              <div class="field">
+                <label for="programShoeSize">シューズサイズ(mm) <span>*</span></label>
+                <input id="programShoeSize" name="programShoeSize" type="number" min="220" max="320" step="5" placeholder="例: 270" required />
+              </div>
+              <div class="field">
+                <label for="programInsta">Instagramアカウント <span>*</span></label>
+                <input id="programInsta" name="programInsta" type="text" placeholder="@account" required />
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn btn-line" id="cancelBtn">キャンセル</button>
+                <button type="submit" class="btn btn-dark">申込する</button>
+              </div>
+            </div>
+          </form>
+
+          <div id="programSuccessMessage" class="success-message hidden">
+            <h3>申込が完了しました</h3>
+            <p>プログラム参加申込を受け付けました。ありがとうございます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>DESCENTE RUNNING © 2026 Awaken Ekiden Race Event</p>
+      <p>お問い合わせ : event@descente.co.kr</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

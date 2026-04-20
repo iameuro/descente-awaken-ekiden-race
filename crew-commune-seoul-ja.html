@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>コミューン・ド・ソウル | デサント ランニング コミュニティ | 2026 Awaken Ekiden Race</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="alternate" hreflang="ko" href="crew-commune-seoul.html" />
+  <link rel="alternate" hreflang="ja" href="crew-commune-seoul-ja.html" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="lang-ja">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="index-ja.html" style="text-decoration:none;color:inherit">DESCENTE RUNNING</a></div>
+      <nav class="main-nav">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+      </nav>
+      <div class="lang-switch" aria-label="言語選択">
+        <a href="crew-commune-seoul.html">KR</a>
+        <a class="active" href="crew-commune-seoul-ja.html" aria-current="page">JP</a>
+      </div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <strong>メニュー</strong>
+      </button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index-ja.html">ホーム</a>
+        <a href="guide-ja.html">アウェイクン駅伝レース</a>
+        <a href="crews-ja.html">デサント ランニング コミュニティ</a>
+        <a href="apply-ja.html">参加申込</a>
+        <div class="mobile-lang-switch" aria-label="言語選択">
+          <a href="crew-commune-seoul.html">KR</a>
+          <a class="active" href="crew-commune-seoul-ja.html" aria-current="page">JP</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>コミューン・ド・ソウル</h1>
+        <p>パフォーマンスランニングクルー</p>
+      </div>
+    </section>
+
+    <section class="section crew-info-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">CREW INTRODUCTION</div>
+          <h2>クルー紹介</h2>
+        </div>
+        <div class="crew-info-content">
+          <p>コミューン・ド・ソウルは、パフォーマンスとタイムを重視するランニングクルーです。体系的なトレーニングで個人記録の向上を目指し、メンバーとともに成長する専門的なコミュニティです。</p>
+          <h3>主な活動</h3>
+          <ul>
+            <li>科学的なトレーニングプログラム</li>
+            <li>ペース別グループラン</li>
+            <li>大会対策トレーニング</li>
+            <li>記録分析とフィードバック</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt program-info-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">PROGRAM GUIDE</div>
+          <h2>プログラム案内</h2>
+        </div>
+        <div class="program-info-content">
+          <div class="program-info-card">
+            <h3>運営時間</h3>
+            <p>平日: 19:30 ~ 21:00<br>週末: 06:00 ~ 08:00</p>
+          </div>
+          <div class="program-info-card">
+            <h3>参加人数</h3>
+            <p>毎週 25~35名</p>
+          </div>
+          <div class="program-info-card">
+            <h3>難易度</h3>
+            <p>中級 ~ 上級</p>
+          </div>
+          <div class="program-info-card">
+            <h3>特徴</h3>
+            <p>パフォーマンス重視,<br>科学的なトレーニング方法</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section program-signup-section">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-label">APPLY</div>
+          <h2>プログラム申込</h2>
+        </div>
+        
+        <form id="crewProgramForm" class="apply-form">
+          <div class="field">
+            <label for="name">名前 <span>*</span></label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="phone">連絡先 <span>*</span></label>
+            <input id="phone" name="phone" type="tel" placeholder="010-0000-0000" required />
+          </div>
+          <div class="field">
+            <label for="shoeSize">シューズサイズ(mm) <span>*</span></label>
+            <input id="shoeSize" name="shoeSize" type="number" min="220" max="320" step="5" placeholder="例: 270" required />
+          </div>
+          <div class="field">
+            <label for="instagram">Instagramアカウント <span>*</span></label>
+            <input id="instagram" name="instagram" type="text" placeholder="@account" required />
+          </div>
+          <div class="form-actions">
+            <a href="crews-ja.html" class="btn btn-line">戻る</a>
+            <button type="submit" class="btn btn-dark">申込する</button>
+          </div>
+        </form>
+
+        <div id="successMessage" class="success-message hidden">
+          <h3>申込が完了しました</h3>
+          <p>コミューン・ド・ソウル プログラム申込を受け付けました。ありがとうございます。</p>
+          <p><a href="crews-ja.html" class="btn btn-dark" style="margin-top:20px;display:inline-block">戻る</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>DESCENTE RUNNING © 2026 Awaken Ekiden Race Event</p>
+      <p>お問い合わせ : event@descente.co.kr</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (() => {
+    const form = document.getElementById('crewProgramForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+      window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
+    });
+    })();
+  </script>
+</body>
+</html>
